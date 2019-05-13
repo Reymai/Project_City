@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="media\background.png" />
+    <Image Include="media\menu_button.png" />
+    <Image Include="media\roadTiles\png\bridgeEast.png" />
+    <Image Include="media\roadTiles\png\bridgeNorth.png" />
+    <Image Include="media\roadTiles\png\crossroad.png" />
+    <Image Include="media\roadTiles\png\dirt.png" />
+    <Image Include="media\roadTiles\png\dirtHigh.png" />
+    <Image Include="media\roadTiles\png\grass.png" />
+    <Image Include="media\roadTiles\png\hillCornerEast.png" />
+    <Image Include="media\roadTiles\png\hillCornerNW.png" />
+    <Image Include="media\roadTiles\png\hillCornerSE.png" />
+    <Image Include="media\roadTiles\png\hillCornerWest.png" />
+    <Image Include="media\roadTiles\png\hillEast.png" />
+    <Image Include="media\roadTiles\png\hillNorth.png" />
+    <Image Include="media\roadTiles\png\hillRoadEast.png" />
+    <Image Include="media\roadTiles\png\hillRoadNorth.png" />
+    <Image Include="media\roadTiles\png\hillRoadSouth.png" />
+    <Image Include="media\roadTiles\png\hillRoadWest.png" />
+    <Image Include="media\roadTiles\png\hillSouth.png" />
+    <Image Include="media\roadTiles\png\hillWest.png" />
+    <Image Include="media\roadTiles\png\lot.png" />
+    <Image Include="media\roadTiles\png\lotCornerEast.png" />
+    <Image Include="media\roadTiles\png\lotCornerNorth.png" />
+    <Image Include="media\roadTiles\png\lotCornerSouth.png" />
+    <Image Include="media\roadTiles\png\lotCornerWest.png" />
+    <Image Include="media\roadTiles\png\lotEast.png" />
+    <Image Include="media\roadTiles\png\lotExitEast.png" />
+    <Image Include="media\roadTiles\png\lotExitNorth.png" />
+    <Image Include="media\roadTiles\png\lotExitSouth.png" />
+    <Image Include="media\roadTiles\png\lotExitWest.png" />
+    <Image Include="media\roadTiles\png\lotNorth.png" />
+    <Image Include="media\roadTiles\png\lotPark.png" />
+    <Image Include="media\roadTiles\png\lotSouth.png" />
+    <Image Include="media\roadTiles\png\lotWest.png" />
+    <Image Include="media\roadTiles\png\roadCornerES.png" />
+    <Image Include="media\roadTiles\png\roadCornerNE.png" />
+    <Image Include="media\roadTiles\png\roadCornerNW.png" />
+    <Image Include="media\roadTiles\png\roadCornerWS.png" />
+    <Image Include="media\roadTiles\png\roadEast.png" />
+    <Image Include="media\roadTiles\png\roadEndEast.png" />
+    <Image Include="media\roadTiles\png\roadEndNorth.png" />
+    <Image Include="media\roadTiles\png\roadEndSouth.png" />
+    <Image Include="media\roadTiles\png\roadEndWest.png" />
+    <Image Include="media\roadTiles\png\roadNorth.png" />
+    <Image Include="media\roadTiles\png\roadTEast.png" />
+    <Image Include="media\roadTiles\png\roadTNorth.png" />
+    <Image Include="media\roadTiles\png\roadTSouth.png" />
+    <Image Include="media\roadTiles\png\roadTWest.png" />
+    <Image Include="media\roadTiles\png\treeConiferShort.png" />
+    <Image Include="media\roadTiles\png\treeConiferTall.png" />
+    <Image Include="media\roadTiles\png\treeShort.png" />
+    <Image Include="media\roadTiles\png\treeShort_autumn.png" />
+    <Image Include="media\roadTiles\png\treeTall.png" />
+    <Image Include="media\roadTiles\png\treeTall_autumn.png" />
+    <Image Include="media\roadTiles\png\water.png" />
+    <Image Include="media\roadTiles\png\waterBeachCornerEast.png" />
+    <Image Include="media\roadTiles\png\waterBeachCornerNorth.png" />
+    <Image Include="media\roadTiles\png\waterBeachCornerSouth.png" />
+    <Image Include="media\roadTiles\png\waterBeachCornerWest.png" />
+    <Image Include="media\roadTiles\png\waterBeachEast.png" />
+    <Image Include="media\roadTiles\png\waterBeachNorth.png" />
+    <Image Include="media\roadTiles\png\waterBeachSouth.png" />
+    <Image Include="media\roadTiles\png\waterBeachWest.png" />
+    <Image Include="media\roadTiles\png\waterCornerEast.png" />
+    <Image Include="media\roadTiles\png\waterCornerNorth.png" />
+    <Image Include="media\roadTiles\png\waterCornerSouth.png" />
+    <Image Include="media\roadTiles\png\waterCornerWest.png" />
+    <Image Include="media\roadTiles\png\waterEast.png" />
+    <Image Include="media\roadTiles\png\waterNorth.png" />
+    <Image Include="media\roadTiles\png\waterSouth.png" />
+    <Image Include="media\roadTiles\png\waterWest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="media\font.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\AMemoryAway.ogg" />
+    <None Include="media\map.tmx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="menu.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{8CC92929-D2EB-44CD-BDDA-C695FC0C505C}</ProjectGuid>
+    <RootNamespace>ProjectCity</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gdi32.lib;winmm.lib;freetype.lib;opengl32.lib;sfml-system-s.lib;sfml-window-s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\pugixml\src;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gdi32.lib;winmm.lib;freetype.lib;opengl32.lib;sfml-system-s.lib;sfml-window-s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\pugixml\src;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets" Condition="Exists('..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets')" />
+    <Import Project="..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets" Condition="Exists('..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Media">
+      <UniqueIdentifier>{74a85488-6314-46e8-97d1-ebd3fc195809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Media\roadTiles">
+      <UniqueIdentifier>{4e0866ae-377d-4edf-b2ba-c35e60b35ee8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="media\background.png">
+      <Filter>Media</Filter>
+    </Image>
+    <Image Include="media\menu_button.png">
+      <Filter>Media</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotCornerSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotCornerWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotExitEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotExitNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotExitSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotExitWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotPark.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadCornerES.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadCornerNE.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadCornerNW.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadCornerWS.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadEndEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadEndNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadEndSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadEndWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadTEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadTNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadTSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\roadTWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\treeConiferShort.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\treeConiferTall.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\treeShort.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\treeShort_autumn.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\treeTall.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\treeTall_autumn.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\water.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachCornerEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachCornerNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachCornerSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachCornerWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterBeachWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterCornerEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterCornerNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterCornerSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterCornerWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\waterWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\bridgeEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\bridgeNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\crossroad.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\dirt.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\dirtHigh.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\grass.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillCornerEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillCornerNW.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillCornerSE.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillCornerWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillRoadEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillRoadNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillRoadSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillRoadWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillSouth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\hillWest.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lot.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotCornerEast.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+    <Image Include="media\roadTiles\png\lotCornerNorth.png">
+      <Filter>Media\roadTiles</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="media\font.ttf">
+      <Filter>Media</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="media\AMemoryAway.ogg">
+      <Filter>Media</Filter>
+    </None>
+    <None Include="media\map.tmx">
+      <Filter>Media</Filter>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="menu.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
