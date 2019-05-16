@@ -282,35 +282,5 @@
     <ClInclude Include="tinyxml2.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="STP\TMXLoader.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Config.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\Layer.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\MapObject.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\ObjectGroup.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\Properties.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\TileMap.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\TileSet.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\Image.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="STP\Core\ImageLayer.hpp">
-      <Filter>Utils</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

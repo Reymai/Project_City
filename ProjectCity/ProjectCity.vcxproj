@@ -112,16 +112,6 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="menu.h" />
-    <ClInclude Include="STP\Config.hpp" />
-    <ClInclude Include="STP\Core\Image.hpp" />
-    <ClInclude Include="STP\Core\ImageLayer.hpp" />
-    <ClInclude Include="STP\Core\Layer.hpp" />
-    <ClInclude Include="STP\Core\MapObject.hpp" />
-    <ClInclude Include="STP\Core\ObjectGroup.hpp" />
-    <ClInclude Include="STP\Core\Properties.hpp" />
-    <ClInclude Include="STP\Core\TileMap.hpp" />
-    <ClInclude Include="STP\Core\TileSet.hpp" />
-    <ClInclude Include="STP\TMXLoader.hpp" />
     <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
