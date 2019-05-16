@@ -19,6 +19,9 @@
     <Filter Include="Media\roadTiles">
       <UniqueIdentifier>{4e0866ae-377d-4edf-b2ba-c35e60b35ee8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{3c3ad9b7-a9bb-4e27-81a9-90f4c86f2648}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="media\background.png">
@@ -250,6 +253,12 @@
     <ClCompile Include="game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="media\AMemoryAway.ogg">
@@ -266,6 +275,42 @@
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\TMXLoader.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Config.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\Layer.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\MapObject.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\ObjectGroup.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\Properties.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\TileMap.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\TileSet.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\Image.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="STP\Core\ImageLayer.hpp">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

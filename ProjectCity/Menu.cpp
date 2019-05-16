@@ -106,6 +106,7 @@ int Menu::draw(sf::RenderWindow& window) {
 				window.clear();
 				Game game;
 				game.load(window);
+				window.close();
 				break;
 			}
 			default:

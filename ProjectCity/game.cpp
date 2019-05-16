@@ -1,8 +1,4 @@
 #include "game.h"
-
-#include <tmxlite/Layer.hpp>
-#include <tmxlite/TileLayer.hpp>
-#include <tmxlite/ImageLayer.hpp>
 #include <iostream>
 
 int Game::load(sf::RenderWindow& window) {
@@ -13,18 +9,17 @@ int Game::load(sf::RenderWindow& window) {
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
 	// load map
-	if (!map.load("media/map.tmx")) {
-		return EXIT_FAILURE;
-	}
+	
 	Game::draw(window);
 }
 
 int Game::draw(sf::RenderWindow& window) {
-	//creating background
+	//creating background 
 	sf::Sprite background(background);
-	const auto& layers = map.getLayers();
-	const auto& tilesets = map.getTilesets();
-	const auto& orientation = map.getOrientation();
+
+	tmx::TileMap map("media/map.tmx");
+
+	map.ShowObjects();
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -33,9 +28,10 @@ int Game::draw(sf::RenderWindow& window) {
 			if (event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
 				window.close();
 		}
-
+		
 		window.clear();
 		window.draw(background);
+		window.draw(map);
 		window.display();
 	}
 	return EXIT_SUCCESS;

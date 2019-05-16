@@ -97,16 +97,32 @@
   <ItemGroup>
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="media\AMemoryAway.ogg" />
-    <None Include="media\map.tmx" />
+    <None Include="media\map.tmx">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
+    <ClInclude Include="map.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="STP\Config.hpp" />
+    <ClInclude Include="STP\Core\Image.hpp" />
+    <ClInclude Include="STP\Core\ImageLayer.hpp" />
+    <ClInclude Include="STP\Core\Layer.hpp" />
+    <ClInclude Include="STP\Core\MapObject.hpp" />
+    <ClInclude Include="STP\Core\ObjectGroup.hpp" />
+    <ClInclude Include="STP\Core\Properties.hpp" />
+    <ClInclude Include="STP\Core\TileMap.hpp" />
+    <ClInclude Include="STP\Core\TileSet.hpp" />
+    <ClInclude Include="STP\TMXLoader.hpp" />
+    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -118,7 +134,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -167,7 +183,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -181,13 +197,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\pugixml\src;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -217,21 +233,23 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\pugixml\src;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\extlibs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STPB\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;pugixml.lib;STP.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets" Condition="Exists('..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets')" />
     <Import Project="..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets" Condition="Exists('..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets')" />
+    <Import Project="..\packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets" Condition="Exists('..\packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets')" />
+    <Import Project="..\packages\pugixml.1.9.0\build\native\pugixml.targets" Condition="Exists('..\packages\pugixml.1.9.0\build\native\pugixml.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -239,5 +257,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\tmxlite_native.redist.1.0.2\build\native\tmxlite_native.redist.targets'))" />
     <Error Condition="!Exists('..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\tmxlite_native.1.0.2\build\native\tmxlite_native.targets'))" />
+    <Error Condition="!Exists('..\packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets'))" />
+    <Error Condition="!Exists('..\packages\pugixml.1.9.0\build\native\pugixml.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\pugixml.1.9.0\build\native\pugixml.targets'))" />
   </Target>
 </Project>
