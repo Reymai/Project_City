@@ -95,6 +95,8 @@
     <Font Include="media\font.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Buildings.cpp" />
+    <ClCompile Include="economics.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -109,6 +111,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="buildings.h" />
+    <ClInclude Include="economics.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="menu.h" />
@@ -118,7 +122,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{8CC92929-D2EB-44CD-BDDA-C695FC0C505C}</ProjectGuid>
     <RootNamespace>ProjectCity</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -223,14 +227,14 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\include;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\TEMP.RVT.000.001.002.003.004.005.006.007.008.009.010.011.012.013.014\Documents\Project City\SFML-2.5.1\include;C:\Users\TEMP.RVT.000.001.002.003.004.005.006.007.008.009.010.011.012.013.014\Documents\Project City\STP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_DYNAMIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\SFML-2.5.1\lib;C:\Users\ricos\OneDrive\Документы\ \Programming\Project City\STPB\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\TEMP.RVT.000.001.002.003.004.005.006.007.008.009.010.011.012.013.014\Documents\Project City\SFML-2.5.1\lib;C:\Users\TEMP.RVT.000.001.002.003.004.005.006.007.008.009.010.011.012.013.014\Documents\Project City\STPB\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;pugixml.lib;STP.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

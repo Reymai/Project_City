@@ -259,6 +259,12 @@
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="economics.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Buildings.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="media\AMemoryAway.ogg">
@@ -281,6 +287,12 @@
     </ClInclude>
     <ClInclude Include="tinyxml2.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="economics.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="buildings.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
