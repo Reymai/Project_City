@@ -8,6 +8,7 @@ int Game::load(sf::RenderWindow& window) {
 	// load font
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
+	// load map
 	
 	Game::draw(window);
 }
