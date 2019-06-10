@@ -3,6 +3,7 @@
 #include <STP/TMXLoader.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 class Game {
 private:
@@ -13,5 +14,6 @@ private:
 public:
 	int load(sf::RenderWindow& window);
 	int draw(sf::RenderWindow& window);
+	void movement(sf::Keyboard& keyboard, sf::View& view);
 };
 
