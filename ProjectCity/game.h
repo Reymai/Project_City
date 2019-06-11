@@ -11,7 +11,7 @@ private:
 	sf::Texture background;
 	sf::Music music;
 	sf::Font font;
-	sf::Texture *tileset;
+	sf::Texture tileset;
 
 public:
 	int load(sf::RenderWindow& window);

@@ -11,11 +11,8 @@ void Map::AddTileVertices (Tile tile, sf::Vector2f position) {
 							*new sf::Vector2f (*new sf::Vector2f (tileTextureDimension * tile.getX (), tileTextureDimension + tile.getY ()))));
 }
 
-Map::Map () {
-}
-
 Map::Map (sf::Texture tileset, int width, int height, float tileTextureDimension, float tileWorldDimension) {
-		this->tileset = tileset;
+		this->tileset = &tileset;
 
 		this->width = width;
 		this->height = height;
@@ -34,4 +31,6 @@ Map::Map (sf::Texture tileset, int width, int height, float tileTextureDimension
 }
 
 void Map::draw (sf::RenderTarget &target, sf::RenderStates states) const {
+	states.texture = tileset;
+	target.draw (*vertexArray, states);
 }

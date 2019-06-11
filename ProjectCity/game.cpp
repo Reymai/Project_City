@@ -7,7 +7,7 @@ int Game::load(sf::RenderWindow& window) {
 	// load font
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
-	tileset->loadFromFile("media/road.png");
+	tileset.loadFromFile ("media/road.png");
 	Game::draw(window);
 }
 
@@ -17,9 +17,8 @@ int Game::draw(sf::RenderWindow& window) {
 
 	sf::View view;
 
-	Map map;
+	Map map(tileset, 10, 10, 70.f, 140.f);
 	/*tmx::TileMap map("media/map.tmx");*/
-	map = *new Map (*tileset, 10, 10, 70.f, 140.f);
 
 	sf::Keyboard keyboard;
 
