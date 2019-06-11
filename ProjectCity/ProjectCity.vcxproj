@@ -99,8 +99,9 @@
     <ClCompile Include="economics.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="map.cpp" />
+    <ClCompile Include="tile.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -114,8 +115,9 @@
     <ClInclude Include="buildings.h" />
     <ClInclude Include="economics.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="map.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="tile.h" />
     <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

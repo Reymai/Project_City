@@ -1,5 +1,4 @@
 #include "game.h"
-#include <iostream>
 
 int Game::load(sf::RenderWindow& window) {
 	// load background
@@ -8,8 +7,7 @@ int Game::load(sf::RenderWindow& window) {
 	// load font
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
-	// load map
-	
+	tileset->loadFromFile("media/road.png");
 	Game::draw(window);
 }
 
@@ -17,9 +15,15 @@ int Game::draw(sf::RenderWindow& window) {
 	//creating background 
 	sf::Sprite background(background);
 
-	tmx::TileMap map("media/map.tmx");
+	sf::View view;
 
-	map.ShowObjects();
+	Map map;
+	/*tmx::TileMap map("media/map.tmx");*/
+	map = *new Map (*tileset, 10, 10, 70.f, 140.f);
+
+	sf::Keyboard keyboard;
+
+	/*map.ShowObjects();*/
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -28,11 +32,32 @@ int Game::draw(sf::RenderWindow& window) {
 			if (event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
 				window.close();
 		}
-		
+		if (keyboard.isKeyPressed) {
+			movement(keyboard, view);
+		}
 		window.clear();
 		window.draw(background);
 		window.draw(map);
 		window.display();
 	}
 	return EXIT_SUCCESS;
+}
+
+void Game::movement(sf::Keyboard& keyboard, sf::View& view){
+	if (keyboard.isKeyPressed(keyboard.W)) {
+		view.move(0, 1.5f);
+		std::cout << "Moving Up!" << std::endl;
+	}
+	if (keyboard.isKeyPressed(keyboard.A)) {
+		view.move(1.5f, 0);
+		std::cout << "Moving Left!" << std::endl;
+	}
+	if (keyboard.isKeyPressed(keyboard.S)) {
+		view.move(0, -1.5f);
+		std::cout << "Moving Down!" << std::endl;
+	}
+	if (keyboard.isKeyPressed(keyboard.D)) {
+		view.move(-1.5f, 0);
+		std::cout << "Moving Right!" << std::endl;
+	}
 }
