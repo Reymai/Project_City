@@ -7,58 +7,69 @@ int Game::load(sf::RenderWindow& window) {
 	// load font
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
-	if(!tileset.loadFromFile ("media/test.png"))
+	//load level
+
+	int level[] = {
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+		11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11,
+	};
+	ptrLevel = level;
+	//load map and tileset
+	if (!map.load ("media/tiles/roadTilesetTest2.png", sf::Vector2u (64, 64), level, 25, 12))
 		return EXIT_FAILURE;
+	
 	Game::draw(window);
 }
 
 int Game::draw(sf::RenderWindow& window) {
 	//creating background 
-	sf::Sprite background(background);
+	sf::Sprite background (background);
 
-	sf::View view;
+	//camera setup
+	view.setSize (window.getSize().x, window.getSize ().y);
+	view.setCenter (window.getSize ().x / 2, window.getSize ().y / 2);
 
-	const int level[] =
-	{
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-		16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16,
-	};
+	map.move ((window.getSize().x / 2) - 800, (window.getSize().y / 2) - 384);			//25 * 64 = 1600	1600 / 2 = 800 | 12 * 64 = 768		768 / 2 = 384
 
-	Map map;
-	if (!map.load ("media/road.png", sf::Vector2u (108, 70), level, 16, 8))
-		return -1;
-	/*tmx::TileMap map("media/map.tmx");*/
-
-	sf::Keyboard keyboard;
-
-	/*map.ShowObjects();*/
-
-	sf::ConvexShape convex;
-
+	
+	/*convex setup
 	convex.setPointCount (4);
 
 	convex.setPoint (0, sf::Vector2f (0, 26));
 	convex.setPoint (1, sf::Vector2f (52, 53.3f));
-	convex.setPoint (2, sf::Vector2f (108.5f, 26));
-	convex.setPoint (3, sf::Vector2f (52, 0));
+	convex.setPoint (2, sf::Vector2f (108.5.f, 26));
+	convex.setPoint (3, sf::Vector2f (52, 0));*/
 
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
 			// Close window
-			if (event.type == sf::Event::Closed || event.key.code == sf::Keyboard::Escape)
-				window.close();
+			if (event.key.code == sf::Keyboard::Escape) {
+				window.close ();
+			}
 		}
-		if (keyboard.isKeyPressed) {
-			movement(keyboard, view);
+		if (mouse.isButtonPressed (mouse.Left)) {
+			std::cout << "BEFORE: "<< ptrLevel [0] << std::endl;
+			roadBuilding (window, ptrLevel);
+			
+			std::cout << "AFTER: " << ptrLevel [0] << std::endl;
 		}
+		/*if (keyboard.isKeyPressed) {
+			movement(background);
+		}*/
+		
 		window.clear ();
+		window.setView (view);
 		window.draw (background);
 		window.draw (map);
 		window.draw (convex);
@@ -67,21 +78,109 @@ int Game::draw(sf::RenderWindow& window) {
 	return EXIT_SUCCESS;
 }
 
-void Game::movement(sf::Keyboard& keyboard, sf::View& view){
-	if (keyboard.isKeyPressed(keyboard.W)) {
-		view.move(0, 1.5f);
-		std::cout << "Moving Up!" << std::endl;
-	}
-	if (keyboard.isKeyPressed(keyboard.A)) {
-		view.move(1.5f, 0);
-		std::cout << "Moving Left!" << std::endl;
-	}
-	if (keyboard.isKeyPressed(keyboard.S)) {
-		view.move(0, -1.5f);
-		std::cout << "Moving Down!" << std::endl;
-	}
-	if (keyboard.isKeyPressed(keyboard.D)) {
-		view.move(-1.5f, 0);
-		std::cout << "Moving Right!" << std::endl;
+//void Game::movement(sf::Sprite& background){
+//	if (keyboard.isKeyPressed(keyboard.W)) {
+//		//view.move (0.f, -5.f);
+//		//background.move (0.f, -5.f);
+//		map.move (0.f, 5.f);
+//	}
+//	if (keyboard.isKeyPressed(keyboard.A)) {
+//		//view.move (-5.f, 0.f);
+//		//background.move (-5.f, 0.f);
+//		map.move (5.f, 0.f);
+//	}
+//	if (keyboard.isKeyPressed(keyboard.S)) {
+//		//view.move (0.f, 5.f);
+//		//background.move (0.f, 5.f);
+//		map.move (0.f, -5.f);
+//	}
+//	if (keyboard.isKeyPressed(keyboard.D)) {
+//		//view.move (5.f, 0.f);
+//		//background.move (5.f, 0.f);
+//		map.move (-5.f, 0.f);
+//	}
+//}
+
+void Game::roadBuilding (sf::RenderWindow &window, int *Level) {
+	if (mouse.isButtonPressed (mouse.Left)) {
+		int xTile = (mouse.getPosition ().x - ((window.getSize ().x / 2) - 800)) / 64;
+		int yTile = (mouse.getPosition ().y - ((window.getSize ().y / 2) - 384)) / 64;
+		if (xTile < 25 && xTile >= 0 && yTile >= 0 && yTile < 12) {
+			int toChange = xTile + yTile * 25;
+			int toChangeUp = toChange - 25;
+			int toChangeDown = toChange + 25;
+			int toChangeLeft = toChange - 1;
+			int toChangeRight = toChange + 1;
+			int tileValue = 1;
+
+			bool haveUp = false;	
+			bool haveDown = false;
+			bool haveRight = false;
+			bool haveLeft = false;
+
+			if (Level [toChangeRight] != 0 && Level [toChangeRight] != 4 && Level [toChangeRight] != 5 && Level [toChangeRight] != 7 && Level [toChangeRight] != 11) {	//1,2,3,6,8,9,10 => !=0,4,5,7,11
+				haveRight = true;
+			}
+			if (Level [toChangeLeft] != 0 && Level [toChangeLeft] != 2 && Level [toChangeLeft] != 3 && Level [toChangeLeft] != 9 && Level [toChangeLeft] != 11) {			//1,4,5,6,7,8,10 => !=2,3,9,11
+				haveLeft = true;
+			}  
+			if (Level [toChangeUp] != 1 && Level [toChangeUp] != 3 && Level [toChangeUp] != 4 && Level [toChangeUp] != 11) {											//0,2,5,6,7,9,10 => != 1,3,4,11
+				haveUp = true;
+			} 
+			if (Level [toChangeDown] != 1 && Level [toChangeDown] != 2 && Level [toChangeDown] != 5 && Level [toChangeDown] != 6 && Level [toChangeDown] != 11) {		//0,3,4,7,8,9,10 => != 1,2,5,6,11
+				haveDown = true;
+			} 
+			
+			//0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+			if (haveUp && haveDown && haveRight && haveLeft) {
+				tileValue = 10;
+			} else if(haveUp && haveDown && haveRight && !haveLeft) {
+				tileValue = 7;
+			} else if (haveUp && haveDown && !haveRight && haveLeft) {
+				tileValue = 9;
+			} else if (haveUp && haveDown && !haveRight && !haveLeft) {
+				tileValue = 0;
+			} else if (haveUp && !haveDown && haveRight && haveLeft) {
+				tileValue = 8;
+			} else if (haveUp && !haveDown && haveRight && !haveLeft) {
+				tileValue = 4;
+			} else if (haveUp && !haveDown && !haveRight && haveLeft) {
+				tileValue = 3;
+			} else if (haveUp && !haveDown && !haveRight && !haveLeft) {
+				tileValue = 0;
+			} else if (!haveUp && haveDown && haveRight && haveLeft) {
+				tileValue = 6;
+			} else if (!haveUp && haveDown && haveRight && !haveLeft) {
+				tileValue = 5;
+			} else if (!haveUp && haveDown && !haveRight && haveLeft) {
+				tileValue = 2;
+			} else if (!haveUp && haveDown && !haveRight && !haveLeft) {
+				tileValue = 0;
+			} else if (!haveUp && !haveDown && haveRight && haveLeft) {
+				tileValue = 1;
+			} else if (!haveUp && !haveDown && haveRight && !haveLeft) {
+				tileValue = 1;
+			} else if (!haveUp && !haveDown && !haveRight && haveLeft) {
+				tileValue = 1;
+			} else if (!haveUp && !haveDown && !haveRight && !haveLeft) {
+				tileValue = 1;
+			}
+
+			/*if (tileValue != 1) {
+				if (Level [toChangeUp] == 1) {
+					Level [toChangeUp] = 0;
+				} else if (Level [toChangeDown] == 1) {
+					Level [toChangeDown] = 0;
+				} else if (Level [toChangeLeft] == 1) {
+					Level [toChangeLeft] = 0;
+				} else if (Level [toChangeRight] == 1) {
+					Level [toChangeRight] = 0;
+				}
+			}*/
+
+			Level [toChange] = tileValue;
+			map.load ("media/tiles/roadTilesetTest2.png", sf::Vector2u (64, 64), Level, 25, 12);
+			std::cout << "CHANGE: " << Level [toChange] << std::endl;
+		}
 	}
 }

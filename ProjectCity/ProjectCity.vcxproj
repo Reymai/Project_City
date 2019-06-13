@@ -95,14 +95,10 @@
     <Font Include="media\font.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Buildings.cpp" />
-    <ClCompile Include="economics.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="map.cpp" />
-    <ClCompile Include="tile.cpp" />
-    <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="media\AMemoryAway.ogg" />
@@ -112,13 +108,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="buildings.h" />
-    <ClInclude Include="economics.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="map.h" />
-    <ClInclude Include="tile.h" />
-    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
