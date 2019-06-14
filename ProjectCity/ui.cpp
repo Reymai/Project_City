@@ -8,7 +8,7 @@ void UI::load () {
 	font.loadFromFile ("media/font.ttf");
 }
 
-void UI::update (Economics economics) {
+void UI::update (Economics economics, sf::RenderWindow &window) {
 	int money;
 	money = economics.getMoney ();
 
@@ -28,18 +28,38 @@ void UI::update (Economics economics) {
 	this->moneyUItext = moneyUItext;
 	this->moneyUIcount = moneyUIcount;
 
+	sf::Text helpHouseBuilding ("To build House press MIDDLE mouse button (WHEEL) | PRICE: )", font, 25);
+	sf::Text helpComercialBuilding ("To build Market press LEFT mouse button | PRICE: 500", font, 25);
+	sf::Text helpRoadBuilding ("To build Road press RIGHT mouse button | PRICE: 100", font, 25);
+
+	helpHouseBuilding.Bold;
+	helpHouseBuilding.setOutlineThickness (2.5);
+	helpHouseBuilding.setPosition (5, window.getSize().y - 100);
+
+	helpComercialBuilding.Bold;
+	helpComercialBuilding.setOutlineThickness (2.5);
+	helpComercialBuilding.setPosition (5, window.getSize ().y - 75);
+
+	helpRoadBuilding.Bold;
+	helpRoadBuilding.setOutlineThickness (2.5);
+	helpRoadBuilding.setPosition (5, window.getSize ().y - 50);
+
+	this->helpHouseBuilding = helpHouseBuilding;
+	this->helpComercialBuilding = helpComercialBuilding;
+	this->helpRoadBuilding = helpRoadBuilding;
 }
 
 void UI::draw (sf::RenderTarget &target, sf::RenderStates states) const {
 	states.transform *= getTransform ();
-	// draw the vertex array
+
 	target.draw (moneyUItext, states);
 	target.draw (moneyUIcount, states);
 
-	target.draw (buildComercial, states);
-	target.draw (buildHouse, states);
-	target.draw (buildHouseText, states);
-	target.draw (buildComercialText, states);
+	target.draw (helpHouseBuilding, states);
+	target.draw (helpComercialBuilding, states);
+	target.draw (helpRoadBuilding, states);
+
+
 	
 }
  

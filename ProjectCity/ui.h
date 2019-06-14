@@ -11,15 +11,14 @@ private:
 	sf::Font font;
 	sf::Text moneyUItext;
 	sf::Text moneyUIcount;
-	sf::Sprite buildHouse;
-	sf::Sprite buildComercial;
-	sf::Text buildHouseText;
-	sf::Text buildComercialText;
+	sf::Text helpHouseBuilding;
+	sf::Text helpComercialBuilding;
+	sf::Text helpRoadBuilding;
 
 public:
 	UI ();
 	void load ();
-	void update (Economics economics);
+	void update (Economics economics, sf::RenderWindow &window);
 	void draw (sf::RenderTarget &target, sf::RenderStates states) const;
 	
 };

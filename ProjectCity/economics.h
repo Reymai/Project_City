@@ -1,14 +1,14 @@
 #pragma once
 class Economics {
 private:
-	double money;
 	int *ptrLevel;
+	float money;
 public:
-	Economics (double money, int *Level);
+	Economics (float money, int *Level);
 	
-	void setMoney (int money);
+	void setMoney (float money);
 
-	void costs (double cost);
+	void costs (float cost);
 	
 	double getMoney ();
 

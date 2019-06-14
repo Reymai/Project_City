@@ -27,5 +27,6 @@ public:
 	int load(sf::RenderWindow& window);
 	int draw(sf::RenderWindow& window);
 	//void movement(sf::Sprite& background);
-	void building (sf::RenderWindow &window, int *Level, Economics economics);
+	int building (sf::RenderWindow &window, int *Level, Economics economics);
+	void housesUpdate (int *Level, Economics economics);
 };
