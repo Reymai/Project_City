@@ -6,6 +6,7 @@
 
 #include "map.h"
 #include "economics.h"
+#include "ui.h"
 
 class Game {
 private:
@@ -19,12 +20,12 @@ private:
 	sf::ConvexShape convex;
 	Map map;
 
+
 	int *ptrLevel;
 
 public:
 	int load(sf::RenderWindow& window);
 	int draw(sf::RenderWindow& window);
 	//void movement(sf::Sprite& background);
-	void ui (Economics economics);
-	void roadBuilding (sf::RenderWindow &window, int *Level);
+	void building (sf::RenderWindow &window, int *Level, Economics economics);
 };

@@ -1,4 +1,5 @@
 #include "economics.h"
+#include <iostream>
 
 Economics::Economics (double money, int *Level) {
 	setMoney (money);
@@ -6,7 +7,13 @@ Economics::Economics (double money, int *Level) {
 }
 
 void Economics::setMoney (int money) {
-		this->money = money;
+	this->money = money;
+}
+
+void Economics::costs (double cost) {
+	this->money = money - cost;
+	std::cout << "HAS COST!"<< money  << std::endl;
+
 }
 
 double Economics::getMoney () {
@@ -15,8 +22,8 @@ double Economics::getMoney () {
 
 void Economics::update () {
 	for (int i = 0; i < 300; i++) {
-		if (ptrLevel [i] == 12) {
-			money++;
+		if (ptrLevel [i] == 1) {
+			this->money = money + 0.01f;
 		}
 	}
 }
