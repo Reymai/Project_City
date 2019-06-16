@@ -14,7 +14,7 @@ int Menu::load(sf::RenderWindow& window) {
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
 	// load music
-	if (!music.openFromFile("media/AMemoryAway.ogg"))
+	if (!music.openFromFile("media/AMemoryAwayLong.ogg"))
 		return EXIT_FAILURE;
 	// load map
 

@@ -14,6 +14,7 @@ private:
 	sf::Text helpHouseBuilding;
 	sf::Text helpComercialBuilding;
 	sf::Text helpRoadBuilding;
+	sf::Text helpRemove;
 
 public:
 	UI ();

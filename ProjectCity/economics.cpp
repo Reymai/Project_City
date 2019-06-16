@@ -8,12 +8,15 @@ Economics::Economics (float money, int *Level) {
 
 void Economics::setMoney (float money) {
 	this->money = money;
-	std::cout << "Setting..." << money << std::endl;
 }
 
 void Economics::costs (float cost) {
-	this->money = money - cost;
-	std::cout << "Paying..." << money << std::endl;
+	money -= cost;
+	this->money = money;
+}
+
+void Economics::incoming (float income) {
+	this->money = money + income;
 }
 
 double Economics::getMoney () {

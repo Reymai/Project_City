@@ -9,6 +9,7 @@ public:
 	void setMoney (float money);
 
 	void costs (float cost);
+	void incoming (float income);
 	
 	double getMoney ();
 
