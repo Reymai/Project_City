@@ -1,4 +1,5 @@
 #pragma once
+
 class Economics {
 private:
 	int *ptrLevel;
@@ -8,8 +9,7 @@ public:
 	
 	void setMoney (float money);
 
-	void costs (float cost);
-	void incoming (float income);
+	void paying (float cost);
 	
 	double getMoney ();
 

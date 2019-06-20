@@ -6,6 +6,7 @@
 
 #include "map.h"
 #include "economics.h"
+#include "building.h"
 #include "ui.h"
 
 class Game {
@@ -26,7 +27,4 @@ private:
 public:
 	int load(sf::RenderWindow& window);
 	int draw(sf::RenderWindow& window);
-	//void movement(sf::Sprite& background);
-	int building (sf::RenderWindow &window, int *Level, Economics economics);
-	void housesUpdate (int *Level, Economics economics);
 };

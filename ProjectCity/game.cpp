@@ -1,5 +1,4 @@
 #include "game.h"
-#include <Windows.h>
 
 int Game::load(sf::RenderWindow& window) {
 	// load background
@@ -9,13 +8,13 @@ int Game::load(sf::RenderWindow& window) {
 	if (!font.loadFromFile("media/font.ttf"))
 		return EXIT_FAILURE;
 	//load level
-	int level[] = {
+	int level[] = { // 0 - grass, 1 - market, 2 - road, 3 - first grade house, 4 - second grade house, 5 - third grade house
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -34,7 +33,8 @@ int Game::load(sf::RenderWindow& window) {
 int Game::draw (sf::RenderWindow &window) {
 	//creating background 
 	sf::Sprite background (background);
-	Economics economics (250, ptrLevel);
+	Economics economics (1500, ptrLevel);
+	Building building;
 	UI ui;
 	ui.load ();
 
@@ -52,134 +52,21 @@ int Game::draw (sf::RenderWindow &window) {
 				window.close ();
 			}
 		}
+
+		economics.paying (building.build (window, economics, ptrLevel, map));
+		economics.paying (building.housesUpdate (ptrLevel, economics, map));
+		map.load ("media/tiles/SimpleTileset.png", sf::Vector2u (64, 64), ptrLevel, 25, 12);
+
 		economics.update ();
-		building (window, ptrLevel, economics);
-		ui.update(economics, window);
-		housesUpdate (ptrLevel, economics);
+		
+		ui.update (economics, building, window);
 
 		window.clear ();
 		window.setView (view);
 		window.draw (background);
 		window.draw (map);
-		window.draw (convex);
 		window.draw (ui);
 		window.display ();
 	}
-	delete ptrLevel;
 	return EXIT_SUCCESS;
-}
-
-int Game::building (sf::RenderWindow &window, int *Level, Economics economics) {
-	int xTile = (mouse.getPosition ().x - ((window.getSize ().x / 2) - 800)) / 64;
-	int yTile = (mouse.getPosition ().y - ((window.getSize ().y / 2) - 384)) / 64;
-	if (xTile < 25 && xTile >= 0 && yTile >= 0 && yTile < 12) {
-		int toChange = xTile + yTile * 25;
-		if (mouse.isButtonPressed (mouse.Left)) {
-			if (Level [toChange] == 0) {
-				Level [toChange] = 2;
-				economics.costs (100);
-			}
-		}
-		if (mouse.isButtonPressed (mouse.Right)) {
-			if (Level [toChange + 1] == 2 || Level [toChange - 1] == 2 || Level [toChange + 25] == 2 || Level [toChange - 25] == 2) {
-				if (Level [toChange] == 0) {
-					Level [toChange] = 1;
-					economics.costs (500);
-				}
-			}
-		}
-		if (mouse.isButtonPressed (mouse.Middle)) {
-			if (Level [toChange + 1] == 2 || Level [toChange - 1] == 2 || Level [toChange + 25] == 2 || Level [toChange - 25] == 2) {
-				if (Level [toChange] == 0) {
-					Level [toChange] = 3;
-					economics.costs (250);
-				}
-			}
-		}
-		if (mouse.isButtonPressed (mouse.Left) && mouse.isButtonPressed (mouse.Right)) {
-			if (Level [toChange] == 1) {
-				economics.incoming (500);
-			}
-			if (Level [toChange] == 2) {
-				economics.incoming (100);
-			}
-			if (Level [toChange] == 3) {
-				economics.incoming (250);
-			}
-			if (Level [toChange] == 4) {
-				economics.incoming (350);
-			}
-			if (Level [toChange] == 5) {
-				economics.incoming (650);
-			}
-			Level [toChange] = 0;
-			
-		}
-		map.load ("media/tiles/SimpleTileset.png", sf::Vector2u (64, 64), Level, 25, 12);
-	}
-	return 0;
-}
-
-void Game::housesUpdate (int *Level, Economics economics) {
-	for (int i = 0; i < 300; i++) {
-		srand ((time (NULL)) + (rand() % 999));
-		if (Level [i] == 3 && economics.getMoney() > 300) {
-			if (rand () % 2) {
-				srand ((time (NULL)) + (rand () % 99999999));
-				if (rand () % 2) {
-					srand ((time (NULL)) + (rand () % 999999999));
-					if (rand () % 2) {
-						srand ((time (NULL)) + (rand () % 99999999999));
-						if (rand () % 2) {
-							economics.costs (100);
-							Level [i] = 4;
-							map.load ("media/tiles/SimpleTileset.png", sf::Vector2u (64, 64), Level, 25, 12);
-						}
-					}
-				}
-			}
-		}
-		if (Level [i] == 4 && economics.getMoney () > 700) {
-			srand ((time (NULL)) + (rand () % 999));
-			int j = 0;
-			if (rand () % 2) {
-				srand ((time (NULL)) + (rand () % 99999999));
-				if (rand () % 2) {
-					srand ((time (NULL)) + (rand () % 999999999));
-					if (rand () % 2) {
-						srand ((time (NULL)) + (rand () % 99999999999));
-						if (rand () % 2) {
-							economics.costs (300);
-							Level [i] = 5;
-							map.load ("media/tiles/SimpleTileset.png", sf::Vector2u (64, 64), Level, 25, 12);
-						}
-					}
-				}
-			}	
-		}
-		if (Level [i] == 4 && economics.getMoney () < 100) {
-			if (rand () % 2) {
-				srand ((time (NULL)) + (rand () % 99999999));
-				if (rand () % 2) {
-					srand ((time (NULL)) + (rand () % 999999999));
-					if (rand () % 2) {
-						Level [i] = 3;
-						map.load ("media/tiles/SimpleTileset.png", sf::Vector2u (64, 64), Level, 25, 12);
-					}
-				}
-			}
-		}
-		if (Level [i] == 5 && economics.getMoney () < 300) {
-			if (rand () % 2) {
-				srand ((time (NULL)) + (rand () % 99999999));
-				if (rand () % 2) {
-					srand ((time (NULL)) + (rand () % 999999999));
-					if (rand () % 2) {
-						Level [i] = 4;
-						map.load ("media/tiles/SimpleTileset.png", sf::Vector2u (64, 64), Level, 25, 12);
-					}
-				}
-			}
-		}
-	}
 }

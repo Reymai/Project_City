@@ -135,7 +135,6 @@ int Menu::buttons(sf::Sprite &start_button, sf::Sprite &exit_button) {
 	sf::Mouse mouse;
 	sf::Mouse& Mouse = mouse;
 	if (start_button.getGlobalBounds().contains(Mouse.getPosition().x, Mouse.getPosition().y)) {	//check if mouse is on start button
-		std::cout << "start" << std::endl;
 	}
 
 	if (exit_button.getGlobalBounds().contains(Mouse.getPosition().x, Mouse.getPosition().y)) {		//check if mouse is on exit button

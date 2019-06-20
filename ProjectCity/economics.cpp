@@ -3,42 +3,38 @@
 
 Economics::Economics (float money, int *Level) {
 	setMoney (money);
-	ptrLevel = Level;
+	this->ptrLevel = Level;
 }
 
 void Economics::setMoney (float money) {
 	this->money = money;
 }
 
-void Economics::costs (float cost) {
-	money -= cost;
-	this->money = money;
-}
-
-void Economics::incoming (float income) {
-	this->money = money + income;
+void Economics::paying (float cost) {
+	money = money - cost;
 }
 
 double Economics::getMoney () {
 	return money;
 }
 
+
 void Economics::update () {
 	for (int i = 0; i < 300; i++) {
-		if (ptrLevel [i] == 2){
-			this->money = money - 0.0001;
-		}
 		if (ptrLevel [i] == 1) {
-			this->money = money + 0.01f;
+			money = money + 0.07f;
+		}
+		if (ptrLevel [i] == 2){
+			money = money - 0.001;
 		}
 		if (ptrLevel [i] == 3) {
-			this->money = money + 0.0001f;
+			money = money + 0.005f;
 		}
 		if (ptrLevel [i] == 4) {
-			this->money = money + 0.001f;
+			money = money + 0.003f;
 		}
 		if (ptrLevel [i] == 5) {
-			this->money = money + 0.01f;
+			money = money + 0.008f;
 		}
 	}
 }
