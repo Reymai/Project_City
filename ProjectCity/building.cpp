@@ -95,16 +95,6 @@ int Building::build (sf::RenderWindow &window, Economics economics, int *Level, 
 					toPay -= 650;
 				}
 				Level [toChange] = 0;
-
-				int housesCount = 0;
-				for (int i = 0; i < 300; i++) {
-					if (Level [i] == 3 || Level [i] == 4 || Level [i] == 5) {
-						housesCount++;
-					}
-				}
-				if (housesCount = 0) {
-					people = 0;
-				}
 			}
 		}
 		return toPay;
